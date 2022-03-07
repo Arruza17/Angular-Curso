@@ -1,5 +1,5 @@
 # Angular Course
-TypeScript is a languages that the browsers can't undestand, so in order for them to get the information,
+TypeScript is a language that the browsers can't undestand, so in order for them to get the information,
 the .ts must be converted to .js.
 Those .js files will be located in the folder build.
 
