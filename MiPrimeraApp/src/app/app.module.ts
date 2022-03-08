@@ -11,6 +11,8 @@ import { SumaComponent } from './suma/suma.component';
 import { CronometroComponent } from './cronometro/cronometro.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { AlertaComponent } from './alerta/alerta.component';
+import { FormularioComponent } from './formulario/formulario.component';
+import { ListaComponent } from './lista/lista.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AlertaComponent } from './alerta/alerta.component';
     SumaComponent,
     CronometroComponent,
     CalculadoraComponent,
-    AlertaComponent
+    AlertaComponent,
+    FormularioComponent,
+    ListaComponent
   ],
   imports: [
     BrowserModule,
