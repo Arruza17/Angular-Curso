@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SaludoComponent } from './saludo/saludo.component';
@@ -8,6 +9,8 @@ import { Hijo1Component } from './hijo1/hijo1.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { SumaComponent } from './suma/suma.component';
 import { CronometroComponent } from './cronometro/cronometro.component';
+import { CalculadoraComponent } from './calculadora/calculadora.component';
+import { AlertaComponent } from './alerta/alerta.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,13 @@ import { CronometroComponent } from './cronometro/cronometro.component';
     Hijo1Component,
     EventosComponent,
     SumaComponent,
-    CronometroComponent
+    CronometroComponent,
+    CalculadoraComponent,
+    AlertaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

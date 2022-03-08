@@ -1,1 +1,12 @@
-<app-cronometro></app-cronometro>
+<app-alerta [texto]="titulos[0]"></app-alerta>
+<div>
+    <input type="text" [(ngModel)]="persona.nombre">
+    <input type="text" [(ngModel)]="persona.apellidos">
+    <input type="text" [(ngModel)]="persona.edad">
+</div>
+<p>Me llamo {{persona.nombre}} {{persona.apellidos}} y tengo {{persona.edad}} años</p>
+<input type="text" [(ngModel)]="campoTexto">
+<p>{{campoTexto}}</p>
+<p>
+    <button (click)="onClick()">Cambia valor variable</button>
+</p>

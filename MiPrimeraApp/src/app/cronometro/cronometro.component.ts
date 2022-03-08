@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cronometro',
@@ -7,20 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CronometroComponent implements OnInit {
 
-  numeroAtras:number;
+  @Input() numeroAtras: number;
+  contador: number;
+  @Output() finalizacion: EventEmitter<string>;
 
-  constructor() { 
+  constructor() {
+    this.contador = 10;
     this.numeroAtras = 10;
+    this.finalizacion = new EventEmitter();
   }
 
   ngOnInit(): void {
+    this.contador = this.numeroAtras ? this.numeroAtras : 10;
   }
-  onClick(){
-    setInterval(() => {
-      if(this.numeroAtras>0){
-        this.numeroAtras--
+
+  onClick() {
+    let interval = setInterval(() => {
+      this.contador--;
+      if (this.contador < 0) {
+        //Metodo que para el intervalo pasandole por parámetro la variable
+        clearInterval(interval);
+        this.contador = this.numeroAtras;
+        this.finalizacion.emit('Finalizacion del cronometro con el numero '+this.numeroAtras);
       }
-    },1000);
+    }, 1000);
   }
 
 }

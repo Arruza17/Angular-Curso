@@ -1,0 +1,39 @@
+.calculadora {
+    width: 200px;
+    border: 1px solid black;
+    background-color: grey;
+    padding: 10px;
+}
+p.resultado{
+    background-color: white;
+    color: black;
+    height: 20px;
+    text-align: center;
+    line-height: 100%;
+    padding-top: 5px;
+}
+.botones_numeros{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.botones_numeros button{
+    width: 33%;
+    height: 30px;
+}
+.botones_numeros button:last-child{
+    width: 100%;
+}
+.botones_calculos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.botones_calculos button{
+    width: 25%;
+    height: 30px;
+}
+.botones_calculos button:last-child{
+    width: 100%;
+}
