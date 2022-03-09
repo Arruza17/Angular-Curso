@@ -8,21 +8,25 @@ import { Tarea } from '../model/tarea.model';
 })
 export class ListaComponent implements OnInit {
 
-  @Input() array: Tarea[];
+  @Input() tareas: Tarea[];
+
+  textoBoton: string;
   constructor() {
-    this.array = [];
+    this.tareas = [];
+    this.textoBoton = 'INCOMPLETA';
   }
 
   ngOnInit(): void {
   }
-  mostrarTareas():string {
-    let result = `<ul>`;
-    this.array.forEach(tarea => {
-      result += `<li>${tarea.titulo} - ${tarea.descripcion}</li>`;
-    });
-    result += `<ul>`;
-
-    return result;
+  onClickFinish(tarea: Tarea,$event:any ){
+    
+    tarea.finalizada = !tarea.finalizada;
+    console.log(this.textoBoton);
+    
+  }
+  onClickBorrar(i:number){
+    console.log(i);
+    this.tareas.splice(i,1);
   }
 
 

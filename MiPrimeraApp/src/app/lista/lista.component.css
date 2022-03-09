@@ -1,8 +1,20 @@
-.cuadrado{
-    width: 500px;
-    height: 250px;
-    background-color: blue;
-    padding: 10px;
-    justify-content: left;
-    color: white;
+.tareas{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.tarea{
+    border: 1px solid black;
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    background-color: red;
+}
+.rojo{
+    background-color: red;
+}
+.verde{
+    background-color: green;
 }

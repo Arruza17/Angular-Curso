@@ -12,7 +12,7 @@ export class FormularioComponent implements OnInit {
   @Output() newToDo: EventEmitter<Tarea>;
 
   constructor() {
-    this.tarea = new Tarea('','');
+    this.tarea = new Tarea('','',false);
     this.newToDo = new EventEmitter();
    }
 
@@ -20,6 +20,6 @@ export class FormularioComponent implements OnInit {
   }
   onClick(){
     this.newToDo.emit(this.tarea);
-    this.tarea = new Tarea('','');
+    this.tarea = new Tarea('','',false);
   }
 }
