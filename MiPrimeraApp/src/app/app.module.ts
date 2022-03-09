@@ -13,6 +13,7 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { AlertaComponent } from './alerta/alerta.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ListaComponent } from './lista/lista.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ListaComponent } from './lista/lista.component';
     CalculadoraComponent,
     AlertaComponent,
     FormularioComponent,
-    ListaComponent
+    ListaComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

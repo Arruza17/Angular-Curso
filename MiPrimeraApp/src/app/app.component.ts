@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Tarea } from './model/tarea.model';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,12 @@ export class AppComponent {
   
   title = 'MiPrimeraApp';
 
-  toDoes : any[] = [];
+  tareas : Tarea[];
   constructor(){
-    
+    this.tareas = [];
   }
-  onNewToDo($event: any){
-    this.toDoes.push($event);
-    console.log(this.toDoes)
+  onNewToDo($event: Tarea){
+    this.tareas.push($event);
   }
 
 }

@@ -1,0 +1,8 @@
+.cuadrado{
+    width: 500px;
+    height: 250px;
+    background-color: blue;
+    padding: 10px;
+    justify-content: left;
+    color: white;
+}

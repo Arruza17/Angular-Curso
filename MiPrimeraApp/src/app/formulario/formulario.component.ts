@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Tarea } from '../model/tarea.model';
 
 @Component({
   selector: 'app-formulario',
@@ -7,17 +8,18 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
-  toDo: any;
-  @Output() newToDo: EventEmitter<any>;
+  tarea: Tarea;
+  @Output() newToDo: EventEmitter<Tarea>;
 
   constructor() {
-    this.toDo = {};
+    this.tarea = new Tarea('','');
     this.newToDo = new EventEmitter();
    }
 
   ngOnInit(): void {
   }
   onClick(){
-    this.newToDo.emit(this.toDo);
+    this.newToDo.emit(this.tarea);
+    this.tarea = new Tarea('','');
   }
 }
