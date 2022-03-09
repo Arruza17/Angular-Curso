@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Tarea } from './model/tarea.model';
 
 @Component({
@@ -6,15 +6,22 @@ import { Tarea } from './model/tarea.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  
+export class AppComponent implements OnInit {
+
   title = 'MiPrimeraApp';
 
-  tareas : Tarea[];
-  constructor(){
+  mainTexto: string;
+
+  tareas: Tarea[];
+  constructor() {
     this.tareas = [];
+    this.mainTexto = 'Texto desde el constructor del padre';
   }
-  onNewToDo($event: Tarea){
+  ngOnInit(): void {
+    let i:number = 0;
+    setInterval(() => {this.mainTexto = 'h'+i;i++},2000);
+  }
+  onNewToDo($event: Tarea) {
     this.tareas.push($event);
   }
 
