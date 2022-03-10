@@ -43,5 +43,7 @@ export class ComandaComponent implements OnInit {
     });
     return listadoEspecial;
   }
-
+  onClickBorrar($event: number){
+    this.productos.splice($event,1);
+  }
 }

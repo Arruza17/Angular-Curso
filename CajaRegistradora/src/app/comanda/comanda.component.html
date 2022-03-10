@@ -1,6 +1,6 @@
 <div class="productos">
     <h3>Total a pagar = {{getTotalPrice() | number:'1.0-2'}}€</h3>
-    <div class="producto" *ngFor="let p of listadoEspecialArray()">
+    <div class="producto" (click)="onClickBorrar(i)"  *ngFor="let p of listadoEspecialArray();let i = index">
         <h4>{{p.nombre}} x {{p.veces}} {{p.precio}}€</h4>
 
     </div>
