@@ -1,0 +1,5 @@
+<h2>NUEVO PRODUCTO</h2>
+<label>Nombre</label>
+<input type="text" [(ngModel)]="nombre">
+<label>Cantidad {{cantidad}}</label>
+<input (input)="onInput($event)" type="range" min="0" max="10" [defaultValue]="0">
