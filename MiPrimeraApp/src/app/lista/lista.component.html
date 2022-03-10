@@ -2,7 +2,7 @@
     <div class="tarea" [ngClass]="{rojo: (!t.finalizada), verde: (t.finalizada)}" *ngFor="let t of tareas;let i =index">
         <h3>{{t.titulo}}</h3>
         <h4>{{t.descripcion}}</h4>
-        <button (click)="onClickFinish(t,$event)">{{(t.finalizada)?'COMPLETA':'INCOMPLETA'}}</button>
+        <button (click)="onClickFinish(t,$event)">{{(t.finalizada)?'INCOMPLETA':'COMPLETA'}}</button>
         <button (click)="onClickBorrar(i)">Borrar</button>
     </div>
 </div>

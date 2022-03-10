@@ -1,2 +1,8 @@
-<app-formulario (newToDo)="onNewToDo($event)"></app-formulario>
-<app-lista [tareas]="tareas"></app-lista>
+<div class="container">
+    <div class="izquierda">
+        <app-formulario (newToDo)="onNewToDo($event)"></app-formulario>
+    </div>
+    <div class="derecha">
+        <app-lista [tareas]="tareas"></app-lista>
+    </div>
+</div>

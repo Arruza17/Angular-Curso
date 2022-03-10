@@ -1,10 +1,11 @@
 .cuadrado{
-    width: 500px;
-    height: 250px;
     background-color: orange;
-    padding: 10px;
-    justify-content: left;
+    padding: 20px;
 
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
 }
 .cuadrado button{
     width: 100%;

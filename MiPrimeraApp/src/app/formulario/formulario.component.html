@@ -1,7 +1,11 @@
 <div class="cuadrado">
-    <p>Título</p>
-    <input type="text" [(ngModel)]="tarea.titulo">
-    <p>Descripción</p>
-    <input type="text" [(ngModel)]="tarea.descripcion">
+    <div class="form-group">
+        <label>Título</label>
+        <input type="text" [(ngModel)]="tarea.titulo">
+    </div>
+    <div class="form-group">
+        <label>Descripción</label>
+        <input type="text" [(ngModel)]="tarea.descripcion">
+    </div>
     <button (click)="onClick()">Enviar</button>
 </div>
