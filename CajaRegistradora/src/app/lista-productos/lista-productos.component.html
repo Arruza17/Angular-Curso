@@ -1,0 +1,7 @@
+<div class="productos">
+    <div (click)="onClick(p)" class="producto" *ngFor="let p of productos">
+        <h3>{{p.nombre}}</h3>
+        <hr>
+        <h3>{{p.precio}}€</h3>
+    </div>
+</div>

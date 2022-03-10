@@ -1,0 +1,16 @@
+.productos{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.producto{
+    border: 1px solid black;
+    width: 40%;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+hr{
+    width: 10%;
+}

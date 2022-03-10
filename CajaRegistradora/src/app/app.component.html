@@ -1,0 +1,13 @@
+<h1>Caja Registradora</h1>
+<div class="container">
+  <div class="izquierda">
+    <h2>COMIDA</h2>
+    <app-lista-productos [productos]="comidas" (producto)="onProductoSeleccionado($event)"></app-lista-productos>
+    <h2>BEBIDA</h2>
+    <app-lista-productos [productos]="bebidas" (producto)="onProductoSeleccionado($event)"></app-lista-productos>
+  </div>
+  <div class="derecha">
+    <h2>COMANDA</h2>
+    <app-comanda [productos]="comandaTotal"></app-comanda>
+  </div>
+</div>

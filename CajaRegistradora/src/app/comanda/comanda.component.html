@@ -1,0 +1,7 @@
+<div class="productos">
+    <h3>Total a pagar = {{getTotalPrice() | number:'1.0-2'}}€</h3>
+    <div class="producto" *ngFor="let p of listadoEspecialArray()">
+        <h4>{{p.nombre}} x {{p.veces}} {{p.precio}}€</h4>
+
+    </div>
+</div>
