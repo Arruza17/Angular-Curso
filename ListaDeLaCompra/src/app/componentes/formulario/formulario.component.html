@@ -1,12 +1,12 @@
 <h2>NUEVO PRODUCTO</h2>
 <div class="formulario">
     <label>Nombre</label>
-    <input type="text" (input)="onInputName($event)">
+    <input type="text" [(ngModel)]="producto.nombre">
     <hr>
     <label>Cantidad {{producto.cantidad}}</label>
-    <input (input)="onInput($event)" type="range" min="0" max="10" [defaultValue]="0">
+    <input type="range" min="0" max="10" [(ngModel)]="producto.cantidad">
     <hr>
-    <select (change)="onChange($event)">
+    <select [(ngModel)]="producto.departamento">
         <option *ngFor="let item of lista">{{item}}</option>
     </select>
     <hr>
