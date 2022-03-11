@@ -3,7 +3,7 @@
     <app-formulario (creado)="onCreado($event)"></app-formulario>
   </div>
   <div class="abajo">
-    <app-lista-productos title="POR COMPRAR" [productos]="productosAComprar"></app-lista-productos>
+    <app-lista-productos title="POR COMPRAR" [productos]="productosAComprar" (comprado)="onComprado($event)"></app-lista-productos>
     <app-lista-productos title="COMPRADO" [productos]="productosComprados"></app-lista-productos>
   </div>
 </div>

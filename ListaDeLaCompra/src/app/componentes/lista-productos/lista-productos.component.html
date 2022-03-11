@@ -1,1 +1,9 @@
-<p>lista-productos works!</p>
+<h2>{{title}}</h2>
+<div class="productos">
+    <div class="producto" *ngFor="let p of productos;let i = index">
+        <h3>{{p.nombre}}</h3>
+        <h4>Cantidad:{{p.cantidad}}</h4>
+        <h4>{{p.departamento}}</h4>
+        <button (click)="onClick(p,i)">{{(p.comprado)?'QUITAR':'COMPRAR'}}</button>
+    </div>
+</div>

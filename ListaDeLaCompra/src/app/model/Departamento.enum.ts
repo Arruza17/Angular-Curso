@@ -1,3 +1,6 @@
-export enum Departamento{
-    Carniceria, Fruteria, Hogar, Panaderia
+export enum Departamento {
+    Carniceria = "Carniceria",
+    Fruteria = "Fruteria",
+    Hogar = "Hogar",
+    Panaderia = "Panaderia"
 } 

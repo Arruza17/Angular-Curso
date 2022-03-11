@@ -10,15 +10,17 @@ import { Producto } from 'src/app/model/Producto.model';
 export class FormularioComponent implements OnInit {
 
   producto: Producto;
-  cantidad:number;
-  nombre:string;
+  lista: Departamento[];
+  seleccionado: Departamento;
+  nombre: string;
 
   @Output() creado:EventEmitter<Producto>;
 
   constructor() {
     this.producto = new Producto('',0,Departamento.Carniceria);
     this.creado = new EventEmitter();
-    this.cantidad = 0;
+    this.lista = [Departamento.Carniceria,Departamento.Fruteria,Departamento.Hogar,Departamento.Panaderia];
+    this.seleccionado = Departamento.Carniceria;
     this.nombre = '';
 
    }
@@ -26,15 +28,19 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
   }
   onInput($event: any){
-    this.cantidad = $event.target.value;
-    console.log(this.cantidad);
+    this.producto.cantidad = $event.target.value;
 
+  }
+  onInputName($event: any){
+    this.producto.nombre = $event.target.value;
   }
   onCreado(){
-    this.producto.nombre = this.nombre;
-    this.producto.cantidad = this.cantidad;
-
+    this.producto.departamento = this.seleccionado;
     this.creado.emit(this.producto);
+    this.producto = new Producto('',0,Departamento.Carniceria);
   }
+  onChange($event:any){
+    this.producto.departamento = $event.target.value;
 
+  }
 }
