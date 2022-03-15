@@ -18,7 +18,7 @@ export class LibrosEscritorComponent implements OnInit {
     this.escritorId = 0;
   }
 
-  async ngOnInit() {
+  ngOnInit(): void {
     this.activatedRoute.parent?.params.subscribe(async params => {
       this.libros = await this.librosService.getAllById(parseInt(params['escritorId']));
     })
