@@ -1,0 +1,15 @@
+.libros{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.libro{
+    border: 1px solid black;
+    width: 20%;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+}
+.libro img{
+    width: 100%;
+}
