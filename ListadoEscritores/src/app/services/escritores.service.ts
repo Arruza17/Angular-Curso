@@ -17,6 +17,11 @@ export class EscritoresService {
     return this.escritores;
 
   }
+  getAllPromise(): Promise<Escritor[]> {
+    return new Promise<Escritor[]>((resolve, reject) => {
+      resolve(this.escritores);
+    })
+  }
 
   getByCountry(pais: string): Promise<Escritor[]> {
     return new Promise<Escritor[]>((resolve, reject) => {
@@ -24,14 +29,14 @@ export class EscritoresService {
     })
   }
 
-  // getById(escritorId: number): Promise<Escritor> {
-  //   return new Promise<Escritor>((resolve, reject) => {
-  //     resolve(this.escritores.find(p => p.id === escritorId))
-  //   })
-  // }
-  getById(escritorId: number): Promise<Escritor[]>{
-    return new Promise<Escritor[]>((resolve,reject) => {
-      resolve(this.escritores.filter(p => p.id === escritorId))
+  getById(escritorId: number): Promise<Escritor>{
+    return new Promise<Escritor>((resolve,reject) => {
+      //resolve(this.escritores.find(p => p.id === escritorId))
+      const escritor: any = this.escritores.find(e => {
+        return e.id === escritorId;
+      });
+      resolve(escritor);
     })
   }
+
 }

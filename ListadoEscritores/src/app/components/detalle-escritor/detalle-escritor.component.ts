@@ -18,13 +18,9 @@ export class DetalleEscritorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.parent?.params.subscribe(params => {
-      // this.escritor = this.escritoresService
-      //   .getById(params['escritorId'])
-      //   .then((escritor) => {
-      //     this.escritor = escritor;
-      //   });
-     
+    this.activatedRoute.params.subscribe(async params => {
+      this.escritor = await this.escritoresService.getById(parseInt(params['escritorId']));
+
     })
 
   }

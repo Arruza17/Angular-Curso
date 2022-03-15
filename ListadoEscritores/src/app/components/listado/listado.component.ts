@@ -16,19 +16,32 @@ export class ListadoComponent implements OnInit {
     this.escritores = [];
   }
 
-  ngOnInit(): void {
-    this.escritores = this.escritoresService.getAll();
+  async ngOnInit() {
+    // this.escritoresService.getAllPromise()
+    // .then(escritores => {
+    //   this.escritores = escritores;
+    // });
+    this.escritores = await this.escritoresService.getAllPromise();
   }
-  onChange($event: any) {
-    console.log($event.target.value)
-    if ($event.target.value == 'Todos') {
-      this.escritores = this.escritoresService.getAll();
+  async onChange($event: any) {
+    // if ($event.target.value == 'Todos') {
+    //   this.escritoresService.getAllPromise()
+    //   .then(escritores => {
+    //     this.escritores = escritores;
+    //   });
+    // } else {
+    //   this.escritoresService.getByCountry($event.target.value)
+    //   .then((escritores) => {
+    //     this.escritores = escritores;
+    //   });
+    // }
+    if($event.target.value === 'Todos'){
+      this.escritores = await this.escritoresService.getAllPromise();
     } else {
-      this.escritoresService.getByCountry($event.target.value)
-      .then((escritores) => {
-        this.escritores = escritores;
-      });
+      this.escritores = await this.escritoresService.getByCountry($event.target.value);
+
     }
+    
   }
   onClickAutor($escritor: Escritor){
     console.log("Autor con id "+$escritor.id+" seleccionado")

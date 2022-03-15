@@ -4,10 +4,10 @@ import { DetalleEscritorComponent } from './components/detalle-escritor/detalle-
 import { ListadoComponent } from './components/listado/listado.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'escritores' },
+  { path: '', pathMatch: 'full', redirectTo: '/escritores' },
   { path: 'escritores', component: ListadoComponent },
   { path: 'escritores/:escritorId', component: DetalleEscritorComponent },
-  { path: '**', redirectTo:'escritores'}
+  { path: '**', redirectTo:'/escritores'}
 ];
 
 @NgModule({
