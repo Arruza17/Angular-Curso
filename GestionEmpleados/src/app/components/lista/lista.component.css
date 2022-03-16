@@ -1,0 +1,15 @@
+.empleados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.empleado{
+    border: 1px solid black;
+    width: 40%;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.empleado img{
+    width: 100%;
+}
