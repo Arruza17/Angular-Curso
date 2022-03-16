@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-model',
@@ -41,6 +42,10 @@ export class ModelComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const emailControl = this.formulario.controls['email'];
+    emailControl.valueChanges.pipe(debounceTime(500)).subscribe(value => {
+      console.log(value);
+    })
   }
 
   onSubmit() {
@@ -52,10 +57,8 @@ export class ModelComponent implements OnInit {
     const max: number = 65;
     const min: number = 18;
     if (value >= 18 && value <= 65) {
-      console.log('A')
       return null;
     } else {
-      console.log('B')
       return { edadValidator: { max, min } }
     }
 
