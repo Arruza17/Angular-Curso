@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class RickAndMortyService {
 
-  baseURL: string = 'https://rickandmortyapi.com/api/character/?page=';
+  baseURL: string = 'https://rickandmortyapi.com/api/';
 
   constructor(private httpClient: HttpClient) { }
 
   getByPage(page: number): Observable<any[]>{
-    return this.httpClient.get<any[]>(this.baseURL+page);
+    return this.httpClient.get<any[]>(this.baseURL+"/character?page="+page);
 
   }
 
