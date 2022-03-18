@@ -1,0 +1,17 @@
+<h1>Precio: {{precio | currency:'EUR':'symbol':'1.1-4'}}</h1>
+<h1>Número : {{numeroDecimal | number:'1.2-2'}}</h1>
+<h1>Fecha de hoy: {{fechaActual | date:'dd/MM/yy ss'}}</h1>
+<h1>Numero aleatorio: {{numeroAleatorio | percent:'1.1-2'}}</h1>
+<h1>{{estudiante | json}}</h1>
+<h1>{{texto | uppercase}}</h1>
+<h1>{{texto | lowercase}}</h1>
+<h1>{{texto | titlecase}}</h1>
+<ul>
+  <li *ngFor="let a of animales | slice:minimo:maximo">{{a}}</li>
+</ul>
+<p>Mínimo: {{minimo}}</p>
+<input type="range" min="0" [max]="animales.length" [(ngModel)]="minimo" step="1">
+<p>Máximo: {{maximo}}</p>
+<input type="range" min="0" [max]="animales.length" [(ngModel)]="maximo" step="1">
+<h1>{{texto | reverso}}</h1>
+<h1>{{texto | capitalize}}</h1>
