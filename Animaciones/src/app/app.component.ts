@@ -1,4 +1,4 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 
 @Component({
@@ -17,13 +17,31 @@ import { Component } from '@angular/core';
       state('verde', style({
         'background-color': 'green'
       })),
-      transition('rojo => amarillo',animate(500)),
-      transition('amarillo => verde',animate(1000)),
-      transition('verde => rojo',animate(1500)),
+      transition('rojo => amarillo', animate(500)),
+      transition('amarillo => verde', animate(1000)),
+      transition('verde => rojo', animate(1500)),
+      // transition('void => *', [
+      //   style({
+      //     'transform': 'translateX(-100%)',
+      //   }),animate(1000)
+      // ])
       transition('void => *', [
-        style({
-          'transform': 'translateX(-100%)',
-        }),animate(1000)
+        animate(500, keyframes([
+          style({
+            opacity: 0,
+            transform: 'translateX(-100%)',
+            offset: 0
+          }), style({
+            opacity: 1,
+            transform: 'translateX(200px)',
+            offset: 0.7
+          }),
+          style({
+            opacity: 1,
+            transform: 'translateX(0)',
+            offset: 1
+          })
+        ]))
       ])
     ])
   ]
@@ -41,9 +59,9 @@ export class AppComponent {
         this.color = 'amarillo';
       } else if (this.color === 'amarillo') {
         this.color = 'verde';
-      } else if ( this.color === 'verde') {
+      } else if (this.color === 'verde') {
         this.color = 'rojo';
       }
-    },2000)
+    }, 2000)
   }
 }
